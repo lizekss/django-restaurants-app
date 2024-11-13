@@ -4,6 +4,8 @@ from menu.views import MenuCategoryListView, MenuSubCategoryListView, MenuSubCat
 
 urlpatterns = [
     path('menu-categories', MenuCategoryListView.as_view(), name='categories-list'),
-    path('subcategories', MenuSubCategoryListView.as_view(), name='subcategories-list'),
-    path('subcategories/<int:subcategory_id>', MenuSubCategoryDetailView.as_view(), name='subcategory-detail'),
+    path('subcategories', MenuSubCategoryListView.as_view(),
+         name='subcategories-list'),
+    path('subcategories/<int:subcategory_id>',
+         MenuSubCategoryDetailView.as_view(), name='subcategory-detail'),
 ]

@@ -13,7 +13,8 @@ class MenuCategoryListView(ListAPIView):
 
 
 class MenuSubCategoryFilter(django_filters.FilterSet):
-    dish_name = django_filters.CharFilter(field_name='dishes__name', lookup_expr='icontains')
+    dish_name = django_filters.CharFilter(
+        field_name='dishes__name', lookup_expr='icontains')
 
     class Meta:
         model = MenuSubCategory
@@ -33,6 +34,7 @@ class MenuSubCategoryDetailFilter(django_filters.FilterSet):
     class Meta:
         model = Dish
         fields = ['sub_category', 'name']
+
 
 class MenuSubCategoryDetailView(ListAPIView):
     serializer_class = DishSerializer
