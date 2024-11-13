@@ -20,7 +20,7 @@ class MenuCategory(models.Model):
 
 class MenuSubCategory(models.Model):
     name = models.CharField(max_length=255)
-    cover_image = models.ImageField(upload_to='subcategory_covers/')
+    cover_image = models.ImageField(upload_to='subcategory_covers/', blank=True)
     parent_category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE, related_name='subcategories')
 
     def __str__(self):
