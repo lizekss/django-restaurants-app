@@ -1,5 +1,16 @@
 from django.db import models
 
+from restaurants.models import Restaurant
+
+
+class Menu(models.Model):
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='menus')
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.name} at {self.restaurant}'
+
 
 class MenuCategory(models.Model):
     name = models.CharField(max_length=255)
