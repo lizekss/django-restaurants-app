@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import MenuCategory, MenuSubCategory, Dish, Ingredient, Menu
+from .models import MenuCategory, MenuSubCategory, Dish, Ingredient
 
-admin.site.register(Menu)
+
 admin.site.register(MenuCategory)
 admin.site.register(MenuSubCategory)
 admin.site.register(Dish)
