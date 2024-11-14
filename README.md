@@ -12,11 +12,6 @@ This project is a Django REST Framework-based API for managing restaurant menus,
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/yourusername/restaurant-menu-api.git
-   cd restaurant-menu-api
-   ```
-   
 2. **Install the dependencies:**
    
 ```bash
