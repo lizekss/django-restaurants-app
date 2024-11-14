@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins
 from rest_framework.generics import ListAPIView, GenericAPIView, CreateAPIView, UpdateAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from .models import MenuCategory, MenuSubCategory, Dish
 from .serializers import MenuCategorySerializer, MenuSubCategorySerializer, DishSerializer, MenuCategoryFullSerializer, \
@@ -53,28 +54,34 @@ class MenuSubCategoryDetailView(ListAPIView):
 class MenuCategoryCreateView(CreateAPIView):
     queryset = MenuCategory.objects.all()
     serializer_class = MenuCategoryFullSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class MenuSubCategoryCreateView(CreateAPIView):
     queryset = MenuSubCategory.objects.all()
     serializer_class = MenuSubCategoryFullSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class DishCreateView(CreateAPIView):
     queryset = Dish.objects.all()
     serializer_class = DishFullSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class MenuCategoryUpdateView(UpdateAPIView):
     queryset = MenuCategory.objects.all()
     serializer_class = MenuCategoryFullSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class MenuSubCategoryUpdateView(UpdateAPIView):
     queryset = MenuSubCategory.objects.all()
     serializer_class = MenuSubCategoryFullSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class DishUpdateView(UpdateAPIView):
     queryset = Dish.objects.all()
     serializer_class = DishFullSerializer
+    permission_classes = [IsAuthenticated]
