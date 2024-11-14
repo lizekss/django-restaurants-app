@@ -10,7 +10,7 @@ This project is a Django REST Framework-based API for managing restaurant menus,
 
 ## Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
 
 2. **Install the dependencies:**
    
@@ -47,6 +47,11 @@ The following endpoints are available for interacting with the API:
 - **Dishes**
   - Create a new dish: [POST /dishes/create/](http://localhost:8000/menu/dishes/create/)
   - Update an existing dish: [PUT /dishes/update/<int:pk>/](http://localhost:8000/menu/dishes/update/1/)
+
+### User app: `/user`
+- **Register**
+  - Register a new user: [POST /register](http://localhost:8000/user/register/)
+- For login and logout, use the browsable API for now or access the rest_framework urls directly under `/api-auth`
 
 ## Usage
 Use tools like Postman or curl to interact with the API. You can also use the Django REST Framework's browsable API by navigating to the endpoints in your web browser.
