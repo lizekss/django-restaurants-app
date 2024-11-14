@@ -1,10 +1,12 @@
 import django_filters
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.generics import ListAPIView
+from rest_framework import mixins
+from rest_framework.generics import ListAPIView, GenericAPIView, CreateAPIView, UpdateAPIView
 
 from .models import MenuCategory, MenuSubCategory, Dish
-from .serializers import MenuCategorySerializer, MenuSubCategorySerializer, DishSerializer
+from .serializers import MenuCategorySerializer, MenuSubCategorySerializer, DishSerializer, MenuCategoryFullSerializer, \
+    MenuSubCategoryFullSerializer, DishFullSerializer
 
 
 class MenuCategoryListView(ListAPIView):
@@ -46,3 +48,33 @@ class MenuSubCategoryDetailView(ListAPIView):
         queryset = Dish.objects.filter(sub_category_id=subcategory_id)
 
         return queryset
+
+
+class MenuCategoryCreateView(CreateAPIView):
+    queryset = MenuCategory.objects.all()
+    serializer_class = MenuCategoryFullSerializer
+
+
+class MenuSubCategoryCreateView(CreateAPIView):
+    queryset = MenuSubCategory.objects.all()
+    serializer_class = MenuSubCategoryFullSerializer
+
+
+class DishCreateView(CreateAPIView):
+    queryset = Dish.objects.all()
+    serializer_class = DishFullSerializer
+
+
+class MenuCategoryUpdateView(UpdateAPIView):
+    queryset = MenuCategory.objects.all()
+    serializer_class = MenuCategoryFullSerializer
+
+
+class MenuSubCategoryUpdateView(UpdateAPIView):
+    queryset = MenuSubCategory.objects.all()
+    serializer_class = MenuSubCategoryFullSerializer
+
+
+class DishUpdateView(UpdateAPIView):
+    queryset = Dish.objects.all()
+    serializer_class = DishFullSerializer
