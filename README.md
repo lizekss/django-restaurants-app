@@ -33,6 +33,9 @@ password: 1234
 ```
 
 The following endpoints are available for interacting with the API:
+### Restaurants app: `/restaurants`
+- **Restaurants**
+  - List all restaurants:  [GET /](http://localhost:8000/restaurants/)
 
 ### Menu app: `/menu`
 - **Menu Categories**
