@@ -33,6 +33,8 @@ password: 1234
 ```
 
 The following endpoints are available for interacting with the API:
+
+### Menu app: `/menu`
 - **Menu Categories**
   - List all categories: [GET /menu-categories/](http://localhost:8000/menu/menu-categories/)
   - Create a new category: [POST /menu-categories/create/](http://localhost:8000/menu/menu-categories/create/)
